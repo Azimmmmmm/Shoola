@@ -1,0 +1,480 @@
+/* Сброс стилей и базовые настройки */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #141414;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+/* Переменные цветов */
+:root {
+  --bg-color: #141414;
+  --alt-bg-color: #1e1e1e;
+  --primary-color: #ff4081; /* Яркий неоновый розовый */
+  --secondary-color: #f0f0f0;
+  --accent-color: #ff80ab;
+}
+
+/* Контейнер */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20,20,20,0.9);
+  padding: 20px 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 64, 129, 0.3);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Логотип */
+.logo {
+  font-family: "Great Vibes", serif;
+  font-weight: 800;
+  font-size: 2.3rem;
+  color: var(--primary-color);
+}
+
+/* Навигация */
+nav ul.nav-links {
+  list-style: none;
+  display: flex;
+}
+nav ul.nav-links li {
+  margin-left: 25px;
+}
+nav ul.nav-links li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav ul.nav-links li a:hover {
+  color: var(--primary-color);
+}
+
+/* Burger Menu */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero-bg {
+  background: url('./img/bg1.avif') no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  transform: translateY(-10%);
+  transition: transform 0.6s linear;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.707);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+.hero-content h1 {
+  font-family: "Great Vibes", serif;
+
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+.btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.3s, transform 0.3s;
+}
+.btn:hover {
+  background: var(--accent-color);
+  transform: scale(1.05);
+}
+.slider-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  perspective: 1000px; /* Включаем перспективу для 3D */
+  overflow: hidden;
+}
+
+/* Сама "лента" слайдов, которую будем вращать */
+.slider {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+/* Каждый слайд */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  transition: opacity 0.8s ease, filter 0.8s ease;
+  opacity: 0.6;
+  filter: blur(2px);
+}
+
+/* Активный (центральный) слайд без размытия и с полной непрозрачностью */
+.slide.active {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Адаптивность на маленьких экранах */
+@media (max-width: 600px) {
+  .slider {
+    height: 250px;
+  }
+}
+
+/* Секции */
+.section {
+  padding: 100px 0 80px;
+  background: var(--bg-color);
+  text-align: center;
+}
+.section.alt-bg {
+  background: var(--alt-bg-color);
+}
+.section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+.section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+.section p {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* Адаптивная картинка в разделе "О нас" */
+.aboutPhoto {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 40px;
+}
+
+/* Сетка услуг */
+.services-grid {
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+}
+.service-item {
+  background: var(--alt-bg-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+.service-item h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+.service-item p {
+  color: #bbb;
+  font-size: 1rem;
+}
+
+/* Таблица цен */
+.prices-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+}
+.prices-table th,
+.prices-table td {
+  padding: 15px 20px;
+  border: 1px solid #333;
+}
+.prices-table th {
+  background: var(--primary-color);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+}
+.prices-table td {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* График работы */
+.schedule-list {
+  list-style: none;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  color: #ccc;
+}
+.schedule-list li {
+  margin: 10px 0;
+}
+
+/* Сетка мастеров */
+.masters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 40px;
+}
+.master-card {
+  background: var(--alt-bg-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.master-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+.master-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid var(--primary-color);
+}
+.master-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+.master-card p {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+/* Форма онлайн записи */
+#booking-form {
+  max-width: 600px;
+  margin: 40px auto 0;
+  background: var(--alt-bg-color);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  text-align: left;
+}
+#booking-form .form-group {
+  margin-bottom: 20px;
+}
+#booking-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+#booking-form input,
+#booking-form select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #1e1e1e;
+  color: #f0f0f0;
+}
+#booking-form input:focus,
+#booking-form select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+#booking-form button {
+  width: 100%;
+  padding: 15px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#booking-form button:hover {
+  background: var(--accent-color);
+}
+
+/* Footer */
+footer {
+  background: #0d0d0d;
+  color: #777;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hidden {
+  opacity: 0;
+}
+.visible {
+  opacity: 1;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+
+  .masters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+  }
+  nav ul.nav-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+  nav ul.nav-links li {
+    margin: 10px 0;
+  }
+  nav ul.nav-links.active {
+    display: flex;
+  }
+  .burger {
+    display: block;
+    align-self: flex-end;
+  }
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  .services-grid{
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .service-item{
+    width: 100%;
+  }
+  .service-item h3{
+    font-size: 1.3rem;
+  }
+}
+@media (max-width:600px) {
+  .hero-bg{
+    background-image: url('./img/bg2.avif');
+  }
+}
+
+@media (max-width:460px) {
+  .masters-grid{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .master-card{
+    width: 100%;
+  }
+}
+
+

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Салон красоты "Шоола"</title>
+  <!-- Подключение шрифтов Google -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">Шоола</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero">Главная</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#prices">Цены</a></li>
+          <li><a href="#schedule">График</a></li>
+          <li><a href="#masters">Мастера</a></li>
+          <li><a href="#booking">Запись</a></li>
+        </ul>
+      </nav>
+      <!-- Burger Menu -->
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section с параллакс-эффектом -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Салон красоты "Шоола"</h1>
+      <p>Искусство преображения. Эстетика современности.</p>
+      <a href="#booking" class="btn">Записаться</a>
+    </div>
+  </section>
+
+  <div class="slider-container">
+    <div class="slider" id="slider">
+      <div class="slide" style="background-image: url('./img/w2.jpg');"></div>
+      <div class="slide" style="background-image: url('./img/w1.png');"></div>
+        <div class="slide" style="background-image: url('./img/w3.jpg');"></div>
+
+    </div>
+  </div>
+
+  <!-- О нас -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>О нас</h2>
+      <p>В "Шоола" мы создаем уникальные образы, подчеркивая вашу индивидуальность с помощью современных технологий и
+        креативного подхода.</p>
+      <img class="aboutPhoto" src="./img/about.jpg" alt="О салоне">
+    </div>
+  </section>
+  
+
+  <!-- Услуги -->
+  <section id="services" class="section alt-bg">
+    <div class="container">
+      <h2>Услуги</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <h3>Стрижка &amp; Укладка</h3>
+          <p>Профессиональный уход и стиль, подходящие именно вам.</p>
+        </div>
+        <div class="service-item">
+          <h3>Окрашивание</h3>
+          <p>Современные техники и смелые решения для вашего образа.</p>
+        </div>
+        <div class="service-item">
+          <h3>Маникюр &amp; Педикюр</h3>
+          <p>Элегантный уход за руками и ногами с использованием лучших средств.</p>
+        </div>
+        <div class="service-item">
+          <h3>Косметология</h3>
+          <p>Индивидуальные процедуры для сохранения вашей естественной красоты.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Цены -->
+  <section id="prices" class="section">
+    <div class="container">
+      <h2>Цены</h2>
+      <table class="prices-table">
+        <thead>
+          <tr>
+            <th>Услуга</th>
+            <th>Цена</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Стрижка</td>
+            <td>250 сом</td>
+          </tr>
+          <tr>
+            <td>Окрашивание</td>
+            <td>500 сом</td>
+          </tr>
+          <tr>
+            <td>Маникюр</td>
+            <td>1200 сом</td>
+          </tr>
+          <tr>
+            <td>Педикюр</td>
+            <td>1500 сом</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- График работы -->
+  <section id="schedule" class="section alt-bg">
+    <div class="container">
+      <h2>График работы</h2>
+      <ul class="schedule-list">
+        <li>Пн – Пт: 9:00 – 20:00</li>
+        <li>Сб: 10:00 – 18:00</li>
+        <li>Вс: Выходной</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Мастера -->
+  <section id="masters" class="section">
+    <div class="container">
+      <h2>Наши Мастера</h2>
+      <div class="masters-grid">
+        <div class="master-card">
+          <img src="./img/master.png" alt="Мастер 1">
+          <h3>Максат</h3>
+          <p>Профессионалный парихмахер</p>
+        </div>
+        <div class="master-card">
+          <img src="./img/master2.png" alt="Мастер 2">
+          <h3>Улан</h3>
+          <p>Профессионалный парихмахер</p>
+        </div>
+        <div class="master-card">
+          <img src="./img/master3.png" alt="Мастер 3">
+          <h3>Баястан</h3>
+          <p>Профессионалный парихмахер</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Онлайн запись -->
+  <section id="booking" class="section alt-bg">
+    <div class="container">
+      <h2>Онлайн запись</h2>
+      <form id="booking-form">
+        <div class="form-group">
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+        </div>
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Введите номер телефона">
+        </div>
+        <div class="form-group">
+          <label for="service">Услуга</label>
+          <select id="service" name="service" required>
+            <option value="">Выберите услугу</option>
+            <option value="стрижка">Стрижка</option>
+            <option value="окрашивание">Окрашивание</option>
+            <option value="маникюр">Маникюр</option>
+            <option value="педикюр">Педикюр</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">Дата</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <button type="submit" class="btn">Записаться</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Салон красоты "Шоола". Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="./slider.js"></script>
+</body>
+
+</html>
